@@ -27,9 +27,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/custom-theme.scss",
+              "src/styles.less",
+              "src/lib/Bootstrap3.3.7/css/bootstrap.min.css"   
             ],
-            "scripts": [],
+            "scripts": [
+              "src/lib/jQuery/jquery-3.4.1.min.js",
+              "src/lib/Bootstrap3.3.7/js/bootstrap.min.js"
+			      ],
             "es5BrowserSupport": true
           },
           "configurations": {
