@@ -1,26 +1,83 @@
+<!-- header -->
 
-
-<router-outlet></router-outlet>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+<mat-toolbar color="primary" class="mat-elevation-z6 header">
+  <div class="header-left col-md-2 no-padding">
+    <div class="row">
+        <div class="col-md-6 text">
+            <span class="num text-bold">29</span>
+            <span class="text-bold">ADMIN</span>
+          </div>
+          <div class="col-md-6 icon-list">
+            <button type="button" class="btn-list" mat-button (click)="drawer.toggle()"><mat-icon>mic</mat-icon></button>
+          </div>
     </div>
   </div>
-</div>
+  <div class="header-middle col-md-7">
+    <ul class="list-nav">
+      <li class="nav-item">
+        <button mat-button [matMenuTriggerFor]="menu">
+          <span>APP</span>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Item 1</button>
+        </mat-menu>
+      </li>
+      <li class="nav-item">
+          <button mat-button [matMenuTriggerFor]="menu">
+            <span>New</span>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
+        </li>
+        <li class="nav-item">
+            <button mat-button [matMenuTriggerFor]="menu">
+              <span>Reports</span>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>Item 1</button>
+              <button mat-menu-item>Item 2</button>
+            </mat-menu>
+          </li>
+          <li class="nav-item">
+              <button mat-button [matMenuTriggerFor]="menu">
+                <span>Actions</span>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>Item 1</button>
+                <button mat-menu-item>Item 2</button>
+              </mat-menu>
+            </li>
+    </ul> 
+  </div>
+  <div class="header-right col-md-3">
+    <div class="item">
+      <img src="assets/images/avatar.png"/>
+    </div>
+  </div>
+</mat-toolbar>
+<mat-drawer-container class="content" autosize>
+  <mat-drawer #drawer class="side-nav-menuleft" mode="side" opened>
+    <ul class="menu">
+      <li class="item">
+        <button class="custom-btn">Dashboard</button> 
+      </li>
+      <li class="item">
+        <button class="custom-btn">Component</button>
+      </li>
+      <li class="item">
+        <button class="custom-btn">UI Elements</button>
+      </li>
+      <li class="item">
+        <button class="custom-btn">Forms</button>
+      </li>
+      <li class="item">
+        <button class="custom-btn">Charts</button>
+      </li>
+    </ul>
+  </mat-drawer>
+  <mat-drawer-content class="">
+      <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

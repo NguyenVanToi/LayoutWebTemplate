@@ -1,0 +1,120 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../styles.less";
+
+.header
+{
+    background-color: #ffffff;
+    position: fixed;
+    z-index: 10;
+    padding-top:10px;
+    .header-left
+    {
+        .text 
+        {
+            font-size: 18px;
+        }
+        .num
+        {
+            color: blue;
+            text-align: left;
+            margin-right: 1px;
+        }
+        .text-bold
+        {
+            font-weight: 700;
+        }
+        .icon-list
+        {
+            text-align: right;
+            .btn-list 
+            {
+                background-color: transparent;
+                border: none;
+                outline: none;
+                color: @gray;
+                cursor: pointer;
+                padding: 5px 6px;
+                &:active
+                {
+                    box-shadow: none;
+                }
+                &:hover {
+                    color: #000;
+                }
+            }
+        }
+    }
+    .header-middle
+    {
+        .list-nav {
+            padding: 0px;
+            .nav-item {
+                display: inline-block;
+                font-size: @common-font-size;
+                color: @gray;
+                font-weight: normal;
+                button {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    color: #777;
+                    cursor: pointer;
+                    padding: 5px 6px;
+                    position: relative;
+                }
+            }
+        }
+    }
+    .header-right
+    {
+        color: #777;
+        font-size: 20px;
+        text-align: right;
+        margin-top: -10px;
+        .item
+        {
+            display: inline-block;
+            margin-left: 45px;
+        }
+        img 
+        {
+            width: 45px;
+            height: 45px;
+        }
+    }
+}
+
+// menu-left
+
+.content{
+    top: 64px;
+    position:fixed;
+    background-color: transparent!important;
+    height: 100%;
+    width: 100%;
+    .side-nav-menuleft {
+        position: absolute;
+        top: 0px;
+        bottom: 0;
+        height: 100%;
+        min-width: 200px;
+        transition: all 0.25s;
+        overflow-y: hidden;
+        display: block;
+        box-sizing: border-box;
+        box-shadow: 0px 5px 5px @gray;
+        padding-top: 20px;
+    }
+    .menu {
+        .item{
+            display: block;
+            padding-bottom: 20px;
+        }
+    }
+}
+mat-drawer-content {
+    padding: 50px;
+    transition: all 0.25s;
+    width: 80%;
+}
+

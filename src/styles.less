@@ -1,4 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@color-background: #EFF2F7;
+@blue: #3B7CFF;
+@gray-blue: #F5F8FC;
+@black: #000000;
+@gray: #8D9CAF;
+@common-font-size: 14px;
+
+body {
+    background-color: @color-background !important;
+    font-size: @common-font-size !important;
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.custom-btn{
+    background: transparent;
+    outline: none;
+    border: none;
+    color: @gray;
+}
