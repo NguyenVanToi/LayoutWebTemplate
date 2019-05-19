@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { 
   MatMenuModule,
   MatToolbarModule, 
@@ -13,16 +14,19 @@ import {
   MatTableModule
 } from '@angular/material';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SensorComponent } from './sensor/sensor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    SensorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule, 
+    HttpClientModule,
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,

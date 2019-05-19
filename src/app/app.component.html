@@ -61,16 +61,16 @@
   <mat-drawer #drawer class="side-nav-menuleft" mode="side" opened>
     <ul class="menu">
       <li class="item">
-        <button class="custom-btn">Dashboard</button> 
+        <button class="custom-btn" type="button" [routerLink]= "['/']">Dashboard</button> 
       </li>
       <li class="item">
-        <button class="custom-btn">Component</button>
+        <button class="custom-btn" type="button" [routerLink]="['/sensor']">Sensor</button>
       </li>
       <li class="item">
-        <button class="custom-btn">UI Elements</button>
+        <button class="custom-btn" type="button" [routerLink]="['/user']" routerLinkActive="router-link-active" >User</button>
       </li>
       <li class="item">
-        <button class="custom-btn">Forms</button>
+        <button class="custom-btn" type="button" [routerLink]="['/farm']">Farm</button>
       </li>
       <li class="item">
         <button class="custom-btn">Charts</button>
