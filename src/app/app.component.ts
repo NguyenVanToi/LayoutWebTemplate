@@ -6,33 +6,22 @@ import {trigger, state, style, transition, animate} from '@angular/animations'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less'],
   animations: [
-    trigger('itemDropdown', [
-        state('up', style({
-          "height": '0px',
-          "overflow-y": 'hidden',
-        })),
-        state('down', style({
-          "min-height": '120px',
-        })),
-        transition('up => down', animate('300ms ease-in-out')), 
-        transition('down => up', animate('300ms ease-in-out')), 
+    trigger('openList', [
+      state('up', style({
+        'height': '0px',
+        'overflow-y': 'hidden',
+      })),
+      state('down', style({
+        'min-height': '120px',
+      })),
+      transition('up => down', animate('300ms')), 
+      transition('down => up', animate('300ms')), 
     ])
   ]
 })
 export class AppComponent {
   title = 'angular-layout';
 
-  itemMenu = [
-    {name: 'Web Analytics', link: 'web-analytics'},
-    {name: 'Sales Monitoring', link: 'sales-monitoring'},
-    {name: 'Ad Campaign', link: 'wad-campaign'},
-    {name: 'Helpdesk Management', link: 'helpdesk-management'},
-    {name: 'Finance Monitoring', link: 'finance-monitoring'},
-    {name: 'Campaign Monitoring', link: 'campaign-monitoring'},
-    {name: 'Excutive SaaS', link: 'excutive-saas'},
-    {name: 'Product Management', link: 'product-management'},
-    {name: 'Smarthome', link: 'smarthome'}
-  ];
 
   menuState:string = 'up';
   menuState3:string = 'up';

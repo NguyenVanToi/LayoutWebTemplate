@@ -12,17 +12,18 @@ export class DashboardComponent implements OnInit {
   constructor(private mushroomService: MushroomService) { 
   }
 
-  mushroom: Mushroom[] = [];
+  mushrooms: Mushroom[] = [];
+
+  mushroomColumns:string[]= ['id', 'name', 'family', 'humidity', 'image'];
+  
   ngOnInit() {
     this.getMushroom();
   }
-  displayedColumns:string[]= ['id', 'name', 'family', 'humidity', 'image'];
-
 
   getMushroom() {
-   this.mushroomService.getMushroom().subscribe(mushroom => {
-      this.mushroom = mushroom;
-      console.log(this.mushroom);
+   this.mushroomService.getMushroom().subscribe(mushrooms => {
+      this.mushrooms = mushrooms;
+      console.log(this.mushrooms);
     });
   }
 }

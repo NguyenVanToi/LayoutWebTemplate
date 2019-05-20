@@ -73,7 +73,14 @@
         <button class="custom-btn" type="button" [routerLink]="['/farm']">Farm</button>
       </li>
       <li class="item">
-        <button class="custom-btn">Charts</button>
+        <div>
+          <button class="custom-btn" (click)="activeDropdown('1')">Charts</button>
+          <ul class="custom-list" [@openList]="menuState">
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+          </ul>
+        </div>
       </li>
     </ul>
   </mat-drawer>
